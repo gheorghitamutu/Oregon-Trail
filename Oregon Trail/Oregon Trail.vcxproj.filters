@@ -19,6 +19,12 @@
     <Filter Include="Source Files\State">
       <UniqueIdentifier>{6b537881-8360-424c-8e44-9bbdb2b08681}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Console">
+      <UniqueIdentifier>{b19415ff-6a29-4ed2-a434-89fa76cbba86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Console">
+      <UniqueIdentifier>{0a32ca52-b1a9-4f90-bb67-4024b7d24743}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="state_machine.hpp">
@@ -33,17 +39,20 @@
     <ClInclude Include="splash_state.hpp">
       <Filter>Header Files\State</Filter>
     </ClInclude>
-    <ClInclude Include="main_menu_state.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="helper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="description_state.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\State</Filter>
     </ClInclude>
     <ClInclude Include="end_state.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="ranking_state.hpp">
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="main_menu_state.hpp">
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="helper.hpp">
+      <Filter>Header Files\Console</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -59,17 +68,25 @@
     <ClCompile Include="splash_state.cpp">
       <Filter>Source Files\State</Filter>
     </ClCompile>
-    <ClCompile Include="main_menu_state.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="helper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="description_state.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\State</Filter>
     </ClCompile>
     <ClCompile Include="end_state.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\State</Filter>
     </ClCompile>
+    <ClCompile Include="helper.cpp">
+      <Filter>Source Files\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="main_menu_state.cpp">
+      <Filter>Source Files\State</Filter>
+    </ClCompile>
+    <ClCompile Include="ranking_state.cpp">
+      <Filter>Source Files\State</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="results.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

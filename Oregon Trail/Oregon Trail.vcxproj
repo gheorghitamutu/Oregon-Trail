@@ -160,6 +160,7 @@
     <ClInclude Include="game.hpp" />
     <ClInclude Include="helper.hpp" />
     <ClInclude Include="main_menu_state.hpp" />
+    <ClInclude Include="ranking_state.hpp" />
     <ClInclude Include="splash_state.hpp" />
     <ClInclude Include="state.hpp" />
     <ClInclude Include="state_machine.hpp" />
@@ -171,8 +172,12 @@
     <ClCompile Include="helper.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_menu_state.cpp" />
+    <ClCompile Include="ranking_state.cpp" />
     <ClCompile Include="splash_state.cpp" />
     <ClCompile Include="state_machine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="results.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
