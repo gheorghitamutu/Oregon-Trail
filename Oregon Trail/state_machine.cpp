@@ -1,5 +1,5 @@
 #include "state_machine.hpp"
-#include <iostream>
+
 
 
 state_machine::state_machine(state_machine* other)
@@ -30,8 +30,6 @@ void state_machine::process_state_changes()
 		}
 
 		is_removing_ = false;
-
-		std::wcout << L"State removed! States queue size: " << m_states_.size() << std::endl;
 	}
 
 	if (is_adding_)
@@ -51,8 +49,6 @@ void state_machine::process_state_changes()
 		m_states_.push(new_state_);
 		m_states_.top()->init();
 		is_adding_ = false;
-
-		std::wcout << L"State added! States queue size: " << m_states_.size() << std::endl;
 	}
 }
 

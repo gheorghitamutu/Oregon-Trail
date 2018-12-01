@@ -1,7 +1,4 @@
-// Oregon Trail.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include "game.h"
+#include "game.hpp"
 
 int main()
 {

@@ -1,34 +1,26 @@
 #include "game.hpp"
+#include "splash_state.hpp"
+
 #include <iostream>
 
 
-game::game()
+game::game() noexcept
 {
+	data_->machine->add_state(std::make_shared<splash_state>(splash_state(data_)));
+	data_->machine->process_state_changes();
+
+	run();
 }
 
-
-game::~game()
+void game::run() const
 {
-}
+	while (true)
+	{
+		data_->machine->get_active_state()->handle_input();
+		data_->machine->get_active_state()->update();
+		
+		data_->machine->process_state_changes();
 
-void game::run()
-{
-	std::cout << "THIS PROGRAM SIMULATES A TRIP OVER THE OREGON TRAIL FROM" <<
-		"INDEPENDENCE, MISSOURI TO OREGON CITY, OREGON IN 1847. YOUR FAMILY OF" <<
-		"FIVE WILL COVER THE 2040 MILE OREGON TRAIL IN 5 - 6 MONTHS-- - IF YOU" <<
-		"MAKE IT ALIVE." << std::endl;
-
-
-}
-
-void game::process_input()
-{	
-}
-
-void game::update()
-{
-}
-
-void game::render()
-{
+		data_->machine->get_active_state()->draw();
+	}
 }

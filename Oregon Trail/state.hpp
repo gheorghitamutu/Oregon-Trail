@@ -12,7 +12,7 @@ public:
 	virtual ~state() = default;
 
 	virtual void handle_input() = 0;
-	virtual void update(float delta_time) = 0;
+	virtual void update() = 0;
 	virtual void draw() = 0;
 
 	virtual void init() = 0;

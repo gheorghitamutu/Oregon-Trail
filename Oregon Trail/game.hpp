@@ -1,14 +1,50 @@
 #pragma once
+#include "state_machine.hpp"
+
+#include "memory"
+
+
+struct game_data
+{
+	std::shared_ptr<state_machine> machine = std::make_shared<state_machine>(state_machine());
+
+	game_data() = default;
+
+	game_data(const game_data& other) = delete;
+	game_data(game_data&& other) noexcept = default;
+
+	explicit game_data(game_data* other)
+	{
+	};
+	game_data& operator=(const game_data& other) = delete;
+	game_data& operator=(game_data&& other) noexcept = delete;
+
+	~game_data() = default;
+};
+
+enum class game_progress
+{
+	playing,
+	pause,
+	won,
+	lose
+};
+
 class game
 {
 public:
-	game();
-	~game();
+	game() noexcept;
 
-	void run();
+	game(const game& other) = default;
+	game(game&& other) noexcept = default;
+	game& operator=(const game& other) = delete;
+	game& operator=(game&& other) noexcept = delete;
 
-	void process_input();
-	void update();
-	void render();
+	~game() = default;
+	
+	void run() const;
+private:
+
+	std::shared_ptr<game_data> data_ = std::make_shared<game_data>(game_data());
 };
 

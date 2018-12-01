@@ -155,13 +155,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="description_state.hpp" />
+    <ClInclude Include="end_state.h" />
     <ClInclude Include="game.hpp" />
+    <ClInclude Include="helper.hpp" />
+    <ClInclude Include="main_menu_state.hpp" />
+    <ClInclude Include="splash_state.hpp" />
     <ClInclude Include="state.hpp" />
     <ClInclude Include="state_machine.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="description_state.cpp" />
+    <ClCompile Include="end_state.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="helper.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="main_menu_state.cpp" />
+    <ClCompile Include="splash_state.cpp" />
     <ClCompile Include="state_machine.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
