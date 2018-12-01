@@ -4,24 +4,6 @@
 #include <string>
 
 
-enum things_to_buy
-{
-	wagon,
-	oxen,
-	food,
-	ammunition,
-	miscellaneous_supplies
-};
-
-static std::map<things_to_buy, int> things_cost =
-{
-	{wagon, 200},
-	{oxen, 40},
-	{food, 200},
-	{ammunition, 200},
-	{miscellaneous_supplies, 200},
-};
-
 class player
 {
 public:

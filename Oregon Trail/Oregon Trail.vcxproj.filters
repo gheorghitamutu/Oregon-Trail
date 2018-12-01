@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\State">
       <UniqueIdentifier>{df7d2d09-4fdb-4333-b096-262d41ea27fd}</UniqueIdentifier>
     </Filter>
@@ -24,9 +20,6 @@
     </Filter>
     <Filter Include="Source Files\Console">
       <UniqueIdentifier>{0a32ca52-b1a9-4f90-bb67-4024b7d24743}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Player">
-      <UniqueIdentifier>{18f50414-a421-4d52-bc5d-7634772d595e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Player">
       <UniqueIdentifier>{8a0d956e-b9b1-440d-8be9-4a6220dac27b}</UniqueIdentifier>
@@ -42,6 +35,19 @@
     </Filter>
     <Filter Include="Source Files\Game">
       <UniqueIdentifier>{66093604-e656-4bc0-8930-ea98a3f4a7b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Player">
+      <UniqueIdentifier>{18f50414-a421-4d52-bc5d-7634772d595e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Store">
+      <UniqueIdentifier>{801cca75-78de-4bac-a37d-2030608d155f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Store">
+      <UniqueIdentifier>{16bf5f2d-6df7-4508-af75-d82276147962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +79,10 @@
       <Filter>Header Files\State</Filter>
     </ClInclude>
     <ClInclude Include="player.hpp">
-      <Filter>Player</Filter>
+      <Filter>Header Files\Player</Filter>
     </ClInclude>
     <ClInclude Include="party.hpp">
-      <Filter>Player</Filter>
+      <Filter>Header Files\Player</Filter>
     </ClInclude>
     <ClInclude Include="departure_state.hpp">
       <Filter>Header Files\State</Filter>
@@ -92,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="game.hpp">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="store.h">
+      <Filter>Header Files\Store</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +151,9 @@
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="store.cpp">
+      <Filter>Source Files\Store</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -170,6 +170,7 @@
     <ClInclude Include="splash_state.hpp" />
     <ClInclude Include="state.hpp" />
     <ClInclude Include="state_machine.hpp" />
+    <ClInclude Include="store.h" />
     <ClInclude Include="store_description_state.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +189,7 @@
     <ClCompile Include="social_status_menu.cpp" />
     <ClCompile Include="splash_state.cpp" />
     <ClCompile Include="state_machine.cpp" />
+    <ClCompile Include="store.cpp" />
     <ClCompile Include="store_description_state.cpp" />
   </ItemGroup>
   <ItemGroup>

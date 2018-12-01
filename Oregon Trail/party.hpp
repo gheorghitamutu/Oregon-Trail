@@ -21,6 +21,7 @@ public:
 	std::vector<player> get_players() const;
 	void set_player_name(int player_index, const std::string& name);
 	void set_money(int money);
+	void buy(int money);
 private:
 	std::vector<player> players_;
 	const int players_count_ = 5;

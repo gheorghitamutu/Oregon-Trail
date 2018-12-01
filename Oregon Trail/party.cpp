@@ -72,3 +72,8 @@ void party::set_money(const int money)
 {
 	players_[0].set_money(money);
 }
+
+void party::buy(const int money)
+{
+	players_[0].buy(money);
+}

@@ -1,8 +1,10 @@
 #include "departure_state.hpp"
-#include <iostream>
-#include <thread>
 #include "helper.hpp"
 #include "store_description_state.hpp"
+#include "store.h"
+
+#include <iostream>
+#include <thread>
 
 
 departure_state::departure_state(std::shared_ptr<game_data> data) : data_(std::move(data))
@@ -84,7 +86,7 @@ void departure_state::handle_input()
 		case custom_departure_day:
 			if (value < 1 || value > months[data_->journey_road->get_start_date().month])
 			{
-				std::cout << "\n	Invalid choice!";				
+				std::cout << "\n	Invalid choice!";
 			}
 			else
 			{
@@ -93,13 +95,20 @@ void departure_state::handle_input()
 			}
 			break;
 		case done_custom_departure:
-			data_->player_party->get_players()[0].buy(wagon);
+			{
+				const auto wagon_cost = data_->universal_store->get_supply_cost(wagon);
+				data_->player_party->buy(wagon_cost);
+			}
 			data_->machine->add_state(std::make_shared<store_description_state>(store_description_state(data_)), true);
 			break;
 		default: ;
 		}
 		break;
-	case done_departure:
+	case done_departure: 
+		{
+			const auto wagon_cost = data_->universal_store->get_supply_cost(wagon);
+			data_->player_party->buy(wagon_cost);
+		}
 		data_->machine->add_state(std::make_shared<store_description_state>(store_description_state(data_)), true);
 		break;
 	default: ;

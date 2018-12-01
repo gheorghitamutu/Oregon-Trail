@@ -4,6 +4,7 @@
 #include "memory"
 #include "party.hpp"
 #include "road.h"
+#include "store.h"
 
 
 struct game_data
@@ -11,6 +12,7 @@ struct game_data
 	std::shared_ptr<state_machine> machine = std::make_shared<state_machine>(state_machine());
 	std::shared_ptr<party> player_party = std::make_shared<party>(party());
 	std::shared_ptr<road> journey_road = std::make_shared<road>(road());
+	std::shared_ptr<store> universal_store = std::make_shared<store>(store());
 
 	game_data() = default;
 

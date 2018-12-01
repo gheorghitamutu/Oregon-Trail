@@ -31,10 +31,10 @@ bool player::buy(const int money)
 {
 	if (money > money_)
 	{
-		money_ -= money;
-		return true;
+		return false;
 	}
-	return false;
+	money_ -= money;
+	return true;
 }
 
 int player::get_health() const
