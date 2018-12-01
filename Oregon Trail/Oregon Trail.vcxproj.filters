@@ -72,6 +72,9 @@
     <ClInclude Include="party.hpp">
       <Filter>Player</Filter>
     </ClInclude>
+    <ClInclude Include="departure_state.hpp">
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -112,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="party.cpp">
       <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="departure_state.cpp">
+      <Filter>Source Files\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

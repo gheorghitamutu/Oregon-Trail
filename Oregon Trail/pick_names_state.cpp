@@ -3,6 +3,7 @@
 #include <iostream>
 #include <thread>
 #include "Helper.hpp"
+#include "departure_state.hpp"
 
 
 pick_names_state::pick_names_state(std::shared_ptr<game_data> data) : data_(std::move(data))
@@ -23,7 +24,10 @@ void pick_names_state::handle_input()
 {
 	std::string name;
 
-	std::getline(std::cin, name);
+	if (pick_ != done)
+	{
+		std::getline(std::cin, name);
+	}
 
 	switch (pick_)
 	{
@@ -71,7 +75,7 @@ void pick_names_state::handle_input()
 		pick_ = done;
 		break;
 	case done:
-		// data_->machine->add_state(std::make_shared<pick_names_state>(pick_names_state(data_)), true);
+		data_->machine->add_state(std::make_shared<departure_state>(departure_state(data_)), true);
 		break;
 	default: ;
 	}

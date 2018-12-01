@@ -5,7 +5,14 @@ class player
 {
 public:
 	player();
-	~player();
+
+	player(const player& other) = default;
+	player(player&& other) noexcept = default;
+	explicit player(player* other);
+	player& operator=(const player& other) = default;
+	player& operator=(player&& other) noexcept = default;
+
+	~player() = default;
 
 	int get_money() const;
 	void set_money(int money);

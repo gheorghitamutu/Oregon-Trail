@@ -5,8 +5,7 @@ player::player()
 {
 }
 
-
-player::~player()
+player::player(player* other)
 {
 }
 

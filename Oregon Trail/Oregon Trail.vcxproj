@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="departure_state.hpp" />
     <ClInclude Include="description_state.hpp" />
     <ClInclude Include="end_state.hpp" />
     <ClInclude Include="game.hpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="state_machine.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="departure_state.cpp" />
     <ClCompile Include="description_state.cpp" />
     <ClCompile Include="end_state.cpp" />
     <ClCompile Include="game.cpp" />

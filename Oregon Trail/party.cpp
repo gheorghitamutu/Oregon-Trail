@@ -12,8 +12,7 @@ party::party()
 	}
 }
 
-
-party::~party()
+party::party(party* other)
 {
 }
 
@@ -49,7 +48,7 @@ std::vector<player> party::get_players() const
 	return players_;
 }
 
-void party::set_player_name(const int player_index, const std::string name)
+void party::set_player_name(const int player_index, const std::string& name)
 {
 	if (player_index > players_count_)
 	{
