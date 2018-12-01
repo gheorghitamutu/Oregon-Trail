@@ -1,7 +1,7 @@
 #include "main_menu_state.hpp"
 #include "helper.hpp"
 
-#include "description_state.hpp"
+#include "game_description_state.hpp"
 
 #include "end_state.hpp"
 
@@ -48,7 +48,7 @@ void main_menu_state::handle_input()
 		break;
 	case learn:
 		std::cout << "\n\n	Your choice is to learn!";
-		data_->machine->add_state(std::make_shared<description_state>(description_state(data_)), false);
+		data_->machine->add_state(std::make_shared<game_description_state>(game_description_state(data_)), false);
 		break;
 	case check:
 		std::cout << "\n\n	Your choice is to check!";

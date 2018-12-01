@@ -2,6 +2,7 @@
 #include <iostream>
 #include <thread>
 #include "helper.hpp"
+#include "store_description_state.hpp"
 
 
 departure_state::departure_state(std::shared_ptr<game_data> data) : data_(std::move(data))
@@ -92,13 +93,14 @@ void departure_state::handle_input()
 			}
 			break;
 		case done_custom_departure:
-			// TO DO: add next state
+			data_->player_party->get_players()[0].buy(wagon);
+			data_->machine->add_state(std::make_shared<store_description_state>(store_description_state(data_)), true);
 			break;
 		default: ;
 		}
 		break;
 	case done_departure:
-		// TO DO: add next state
+		data_->machine->add_state(std::make_shared<store_description_state>(store_description_state(data_)), true);
 		break;
 	default: ;
 	}

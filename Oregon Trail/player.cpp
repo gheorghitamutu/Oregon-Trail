@@ -19,6 +19,24 @@ void player::set_money(const int money)
 	money_ = money;
 }
 
+void player::drop_money_by(const int money)
+{
+	if (money > money_)
+	{
+		money_ -= money;
+	}
+}
+
+bool player::buy(const int money)
+{
+	if (money > money_)
+	{
+		money_ -= money;
+		return true;
+	}
+	return false;
+}
+
 int player::get_health() const
 {
 	return health_;

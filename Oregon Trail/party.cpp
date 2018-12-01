@@ -23,6 +23,16 @@ bool party::is_party_able_to_continue()
 		return false;
 	}
 
+	if (oxens_ < 2)
+	{
+		return false;
+	}
+
+	if (food_pounds_ < 1)
+	{
+		return false;
+	}
+
 	return true;
 }
 
@@ -56,4 +66,9 @@ void party::set_player_name(const int player_index, const std::string& name)
 	}
 
 	players_[player_index].set_name(name);
+}
+
+void party::set_money(const int money)
+{
+	players_[0].set_money(money);
 }

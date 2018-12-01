@@ -156,7 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="departure_state.hpp" />
-    <ClInclude Include="description_state.hpp" />
+    <ClInclude Include="game_description_state.hpp" />
     <ClInclude Include="end_state.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="helper.hpp" />
@@ -170,10 +170,11 @@
     <ClInclude Include="splash_state.hpp" />
     <ClInclude Include="state.hpp" />
     <ClInclude Include="state_machine.hpp" />
+    <ClInclude Include="store_description_state.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="departure_state.cpp" />
-    <ClCompile Include="description_state.cpp" />
+    <ClCompile Include="game_description_state.cpp" />
     <ClCompile Include="end_state.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="helper.cpp" />
@@ -187,6 +188,7 @@
     <ClCompile Include="social_status_menu.cpp" />
     <ClCompile Include="splash_state.cpp" />
     <ClCompile Include="state_machine.cpp" />
+    <ClCompile Include="store_description_state.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="results.txt" />

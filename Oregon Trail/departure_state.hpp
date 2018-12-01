@@ -1,5 +1,5 @@
 #pragma once
-#include "description_state.hpp"
+#include "game_description_state.hpp"
 
 enum departure_options : int
 {

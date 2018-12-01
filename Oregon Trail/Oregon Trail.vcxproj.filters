@@ -31,6 +31,18 @@
     <Filter Include="Source Files\Player">
       <UniqueIdentifier>{8a0d956e-b9b1-440d-8be9-4a6220dac27b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Road">
+      <UniqueIdentifier>{7dd5973e-587d-48b3-99dd-874fc520fd26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{f5cf1531-2a58-43e9-93a4-8051793da56b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Road">
+      <UniqueIdentifier>{ffda05f7-77f4-4522-a9e6-fe9640c1503e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{66093604-e656-4bc0-8930-ea98a3f4a7b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="state_machine.hpp">
@@ -39,13 +51,7 @@
     <ClInclude Include="state.hpp">
       <Filter>Header Files\State</Filter>
     </ClInclude>
-    <ClInclude Include="game.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="splash_state.hpp">
-      <Filter>Header Files\State</Filter>
-    </ClInclude>
-    <ClInclude Include="description_state.hpp">
       <Filter>Header Files\State</Filter>
     </ClInclude>
     <ClInclude Include="ranking_state.hpp">
@@ -75,14 +81,20 @@
     <ClInclude Include="departure_state.hpp">
       <Filter>Header Files\State</Filter>
     </ClInclude>
+    <ClInclude Include="game_description_state.hpp">
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="store_description_state.hpp">
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
     <ClInclude Include="road.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Road</Filter>
+    </ClInclude>
+    <ClInclude Include="game.hpp">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -90,9 +102,6 @@
       <Filter>Source Files\State</Filter>
     </ClCompile>
     <ClCompile Include="splash_state.cpp">
-      <Filter>Source Files\State</Filter>
-    </ClCompile>
-    <ClCompile Include="description_state.cpp">
       <Filter>Source Files\State</Filter>
     </ClCompile>
     <ClCompile Include="end_state.cpp">
@@ -122,8 +131,17 @@
     <ClCompile Include="departure_state.cpp">
       <Filter>Source Files\State</Filter>
     </ClCompile>
+    <ClCompile Include="game_description_state.cpp">
+      <Filter>Source Files\State</Filter>
+    </ClCompile>
+    <ClCompile Include="store_description_state.cpp">
+      <Filter>Source Files\State</Filter>
+    </ClCompile>
     <ClCompile Include="road.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Road</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

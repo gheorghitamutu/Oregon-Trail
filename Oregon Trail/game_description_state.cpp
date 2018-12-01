@@ -1,4 +1,4 @@
-#include "description_state.hpp"
+#include "game_description_state.hpp"
 #include <string>
 #include "Helper.hpp"
 #include <iostream>
@@ -6,20 +6,20 @@
 #include <thread>
 
 
-description_state::description_state(std::shared_ptr<game_data> data) : data_(std::move(data))
+game_description_state::game_description_state(std::shared_ptr<game_data> data) : data_(std::move(data))
 {
 }
 
 
-description_state::~description_state()
+game_description_state::~game_description_state()
 {
 }
 
-void description_state::init()
+void game_description_state::init()
 {
 }
 
-void description_state::handle_input()
+void game_description_state::handle_input()
 {
 	std::string choice;
 
@@ -28,11 +28,11 @@ void description_state::handle_input()
 	data_->machine->remove_state();
 }
 
-void description_state::update()
+void game_description_state::update()
 {
 }
 
-void description_state::draw()
+void game_description_state::draw()
 {
 	helper::clear_console();	
 
@@ -45,10 +45,10 @@ void description_state::draw()
 
 }
 
-void description_state::resume()
+void game_description_state::resume()
 {
 }
 
-void description_state::pause()
+void game_description_state::pause()
 {
 }
