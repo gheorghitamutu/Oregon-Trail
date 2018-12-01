@@ -80,7 +80,7 @@ void ranking_state::draw()
 		std::cout << "		#" << rank_index << " " << rank << std::endl;
 	}
 
-	std::cout << "\n		" << "PRESS ANY KEY TO CONTINUE...";
+	std::cout << "\n		" << "PRESS ENTER TO CONTINUE...";
 }
 
 void ranking_state::resume()

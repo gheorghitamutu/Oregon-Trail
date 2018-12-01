@@ -160,7 +160,9 @@
     <ClInclude Include="game.hpp" />
     <ClInclude Include="helper.hpp" />
     <ClInclude Include="main_menu_state.hpp" />
+    <ClInclude Include="pick_names_state.h" />
     <ClInclude Include="ranking_state.hpp" />
+    <ClInclude Include="social_status_menu.h" />
     <ClInclude Include="splash_state.hpp" />
     <ClInclude Include="state.hpp" />
     <ClInclude Include="state_machine.hpp" />
@@ -172,7 +174,9 @@
     <ClCompile Include="helper.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_menu_state.cpp" />
+    <ClCompile Include="pick_names_state.cpp" />
     <ClCompile Include="ranking_state.cpp" />
+    <ClCompile Include="social_status_menu.cpp" />
     <ClCompile Include="splash_state.cpp" />
     <ClCompile Include="state_machine.cpp" />
   </ItemGroup>

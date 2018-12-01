@@ -13,8 +13,10 @@
 
 #include <string>
 
-#include <thread>
 #include "ranking_state.hpp"
+
+#include <thread>
+#include "social_status_menu.h"
 
 
 main_menu_state::main_menu_state(std::shared_ptr<game_data> data) : data_(std::move(data))
@@ -42,6 +44,7 @@ void main_menu_state::handle_input()
 	{
 	case travel:
 		std::cout << "\n\n	Your choice is to travel!";
+		data_->machine->add_state(std::make_shared<social_status_menu>(social_status_menu(data_)), false);
 		break;
 	case learn:
 		std::cout << "\n\n	Your choice is to learn!";
