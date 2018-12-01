@@ -1,4 +1,4 @@
-#include "pick_names_state.h"
+#include "pick_names_state.hpp"
 #include <string>
 #include <iostream>
 #include <thread>
@@ -7,7 +7,6 @@
 
 pick_names_state::pick_names_state(std::shared_ptr<game_data> data) : data_(std::move(data))
 {
-	names_ = {"", "", "", "", ""};
 	pick_ = main;
 }
 
@@ -36,7 +35,7 @@ void pick_names_state::handle_input()
 		{
 			name = "Noah";
 		}
-		names_[0] = name;
+		data_->player_party->set_player_name(0, name);
 		pick_ = second;
 		break;
 	case second:
@@ -44,7 +43,7 @@ void pick_names_state::handle_input()
 		{
 			name = "Alan";
 		}
-		names_[1] = name;
+		data_->player_party->set_player_name(1, name);
 		pick_ = third;
 		break;
 	case third:
@@ -52,7 +51,7 @@ void pick_names_state::handle_input()
 		{
 			name = "Joan";
 		}
-		names_[2] = name;
+		data_->player_party->set_player_name(2, name);
 		pick_ = fourth;
 		break;
 	case fourth:
@@ -60,7 +59,7 @@ void pick_names_state::handle_input()
 		{
 			name = "Elise";
 		}
-		names_[3] = name;
+		data_->player_party->set_player_name(3, name);
 		pick_ = fifth;
 		break;
 	case fifth:
@@ -68,7 +67,7 @@ void pick_names_state::handle_input()
 		{
 			name = "Katie";
 		}
-		names_[4] = name;
+		data_->player_party->set_player_name(4, name);
 		pick_ = done;
 		break;
 	case done:
@@ -106,12 +105,12 @@ void pick_names_state::draw()
 		std::cout << "	What are the names of the four other members in your party?\n\n";
 		{
 			auto index_names = 0;
-			for (const auto& name : names_)
+			for (const auto& player : data_->player_party->get_players())
 			{
 				index_names++;
-				std::cout << "		#" << index_names << " " << name;
+				std::cout << "		#" << index_names << " " << player.get_name();
 
-				if (name.empty())
+				if (player.get_name().empty())
 				{
 					break;
 				}

@@ -156,11 +156,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="description_state.hpp" />
-    <ClInclude Include="end_state.h" />
+    <ClInclude Include="end_state.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="helper.hpp" />
     <ClInclude Include="main_menu_state.hpp" />
-    <ClInclude Include="pick_names_state.h" />
+    <ClInclude Include="party.hpp" />
+    <ClInclude Include="pick_names_state.hpp" />
+    <ClInclude Include="player.hpp" />
     <ClInclude Include="ranking_state.hpp" />
     <ClInclude Include="social_status_menu.h" />
     <ClInclude Include="splash_state.hpp" />
@@ -174,7 +176,9 @@
     <ClCompile Include="helper.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_menu_state.cpp" />
+    <ClCompile Include="party.cpp" />
     <ClCompile Include="pick_names_state.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="ranking_state.cpp" />
     <ClCompile Include="social_status_menu.cpp" />
     <ClCompile Include="splash_state.cpp" />

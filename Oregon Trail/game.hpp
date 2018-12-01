@@ -2,11 +2,13 @@
 #include "state_machine.hpp"
 
 #include "memory"
+#include "party.hpp"
 
 
 struct game_data
 {
 	std::shared_ptr<state_machine> machine = std::make_shared<state_machine>(state_machine());
+	std::shared_ptr<party> player_party = std::make_shared<party>(party());
 
 	game_data() = default;
 

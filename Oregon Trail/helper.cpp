@@ -7,7 +7,7 @@
 
 void helper::go_to_xy(const int x, const int y)
 {
-	const COORD point = {x, y};
+	const COORD point = {static_cast<short>(x), static_cast<short>(y)};
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), point);
 }
 

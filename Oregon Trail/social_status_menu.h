@@ -7,9 +7,9 @@
 enum social_status_menu_options : int
 {
 	offset_status,
-	banker,		// x1 points | 1600
-	carpenter,	// x2 points | 800
-	farmer		// x3 points | 400
+	banker,
+	carpenter,
+	farmer
 };
 
 class social_status_menu : public state

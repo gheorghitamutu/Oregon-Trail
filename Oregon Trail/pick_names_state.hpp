@@ -37,8 +37,6 @@ public:
 private:
 	std::shared_ptr<game_data> data_;
 
-	pick_state pick_;;
-
-	std::vector<std::string> names_;
+	pick_state pick_;
 };
 

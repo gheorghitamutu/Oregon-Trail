@@ -3,7 +3,7 @@
 
 #include "description_state.hpp"
 
-#include "end_state.h"
+#include "end_state.hpp"
 
 #include <chrono>
 

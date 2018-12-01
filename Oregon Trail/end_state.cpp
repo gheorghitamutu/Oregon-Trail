@@ -1,4 +1,4 @@
-#include "end_state.h"
+#include "end_state.hpp"
 #include <string>
 #include <iostream>
 #include "Helper.hpp"

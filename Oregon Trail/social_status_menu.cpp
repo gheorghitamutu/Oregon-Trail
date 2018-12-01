@@ -1,10 +1,10 @@
 #include "social_status_menu.h"
 #include <string>
 #include <iostream>
-#include "Helper.hpp"
+#include "helper.hpp"
 #include <chrono>
 #include <thread>
-#include "pick_names_state.h"
+#include "pick_names_state.hpp"
 
 
 social_status_menu::social_status_menu(std::shared_ptr<game_data> data) : data_(std::move(data))
@@ -32,14 +32,17 @@ void social_status_menu::handle_input()
 	{
 	case banker:
 		std::cout << "\n\n	Your choice is to be a banker!";
+		data_->player_party->get_players()[0].set_money(1200);
 		data_->machine->add_state(std::make_shared<pick_names_state>(pick_names_state(data_)), true);
 		break;
 	case carpenter:
 		std::cout << "\n\n	Your choice is to be a carpenter!";
+		data_->player_party->get_players()[0].set_money(800);
 		data_->machine->add_state(std::make_shared<pick_names_state>(pick_names_state(data_)), true);
 		break;
 	case farmer:
 		std::cout << "\n\n	Your choice is to be a farmer!";
+		data_->player_party->get_players()[0].set_money(400);
 		data_->machine->add_state(std::make_shared<pick_names_state>(pick_names_state(data_)), true);
 		break;
 	case offset_status:

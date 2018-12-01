@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Console">
       <UniqueIdentifier>{0a32ca52-b1a9-4f90-bb67-4024b7d24743}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{18f50414-a421-4d52-bc5d-7634772d595e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{8a0d956e-b9b1-440d-8be9-4a6220dac27b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="state_machine.hpp">
@@ -42,9 +48,6 @@
     <ClInclude Include="description_state.hpp">
       <Filter>Header Files\State</Filter>
     </ClInclude>
-    <ClInclude Include="end_state.h">
-      <Filter>Header Files\State</Filter>
-    </ClInclude>
     <ClInclude Include="ranking_state.hpp">
       <Filter>Header Files\State</Filter>
     </ClInclude>
@@ -57,8 +60,17 @@
     <ClInclude Include="social_status_menu.h">
       <Filter>Header Files\State</Filter>
     </ClInclude>
-    <ClInclude Include="pick_names_state.h">
+    <ClInclude Include="end_state.hpp">
       <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="pick_names_state.hpp">
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="player.hpp">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="party.hpp">
+      <Filter>Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +106,12 @@
     </ClCompile>
     <ClCompile Include="pick_names_state.cpp">
       <Filter>Source Files\State</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="party.cpp">
+      <Filter>Source Files\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
