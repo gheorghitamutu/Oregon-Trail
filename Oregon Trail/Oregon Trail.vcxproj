@@ -165,6 +165,7 @@
     <ClInclude Include="pick_names_state.hpp" />
     <ClInclude Include="player.hpp" />
     <ClInclude Include="ranking_state.hpp" />
+    <ClInclude Include="road.h" />
     <ClInclude Include="social_status_menu.h" />
     <ClInclude Include="splash_state.hpp" />
     <ClInclude Include="state.hpp" />
@@ -182,6 +183,7 @@
     <ClCompile Include="pick_names_state.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="ranking_state.cpp" />
+    <ClCompile Include="road.cpp" />
     <ClCompile Include="social_status_menu.cpp" />
     <ClCompile Include="splash_state.cpp" />
     <ClCompile Include="state_machine.cpp" />

@@ -75,6 +75,9 @@
     <ClInclude Include="departure_state.hpp">
       <Filter>Header Files\State</Filter>
     </ClInclude>
+    <ClInclude Include="road.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="departure_state.cpp">
       <Filter>Source Files\State</Filter>
+    </ClCompile>
+    <ClCompile Include="road.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

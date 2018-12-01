@@ -17,19 +17,6 @@ enum custom_departure_options : int
 	done_custom_departure
 };
 
-struct months
-{
-	int march = 31;
-	int april = 30;
-	int may = 31;
-	int june = 30;
-	int july = 30;
-	int august = 31;
-	int september = 30;
-	int october = 31;
-	int november = 30;
-};
-
 class departure_state : public state
 {
 public:

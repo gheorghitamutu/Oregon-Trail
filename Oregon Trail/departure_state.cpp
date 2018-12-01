@@ -1,13 +1,13 @@
 #include "departure_state.hpp"
 #include <iostream>
 #include <thread>
-#include "Helper.hpp"
+#include "helper.hpp"
 
 
 departure_state::departure_state(std::shared_ptr<game_data> data) : data_(std::move(data))
 {
 	departure_pick_ = default_departure_date;
-	custom_departure_pick_ = offset_custom_departure;
+	custom_departure_pick_ = custom_departure_month;
 }
 
 
@@ -45,7 +45,6 @@ void departure_state::handle_input()
 			if (value == 1)
 			{
 				departure_pick_ = done_departure;
-				// TO DO: add this to road class
 			}
 			else
 			{
@@ -60,20 +59,48 @@ void departure_state::handle_input()
 			custom_departure_pick_ = custom_departure_month;
 			break;
 		case custom_departure_month:
-			custom_departure_pick_ = custom_departure_day;
-			// TO DO: add this to road class
+			if (value != 1 && value != 2 && value != 3)
+			{
+				std::cout << "\n	Invalid choice!";
+			}
+			else
+			{
+				if (value == 1)
+				{
+					data_->journey_road->set_start_date_month(march);
+				}
+				else if (value == 2)
+				{
+					data_->journey_road->set_start_date_month(april);
+				}
+				else if (value == 3)
+				{
+					data_->journey_road->set_start_date_month(may);
+				}
+				custom_departure_pick_ = custom_departure_day;
+			}
 			break;
 		case custom_departure_day:
-			custom_departure_pick_ = done_custom_departure;
-			// TO DO: add this to road class
+			if (value < 1 || value > months[data_->journey_road->get_start_date().month])
+			{
+				std::cout << "\n	Invalid choice!";				
+			}
+			else
+			{
+				data_->journey_road->set_start_date_day(value);
+				custom_departure_pick_ = done_custom_departure;
+			}
 			break;
 		case done_custom_departure:
+			// TO DO: add next state
+			break;
 		default: ;
 		}
 		break;
 	case done_departure:
+		// TO DO: add next state
 		break;
-	default:;
+	default: ;
 	}
 
 	std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -88,6 +115,9 @@ void departure_state::draw()
 	helper::clear_console();
 
 	std::cout << "\n\n\n\n						OREGON TRAIL\n\n\n\n";
+
+
+	const auto start_date = data_->journey_road->get_start_date();
 
 	switch (departure_pick_)
 	{
@@ -107,27 +137,24 @@ void departure_state::draw()
 			break;
 		case custom_departure_month:
 			std::cout << "	Pick the month to leave.\n\n";
-			std::cout << "		#1 March" <<
-				"		#1 April" <<
-				"		#1 May\n" <<
+			std::cout << "		#1 March\n" <<
+				"		#2 April\n" <<
+				"		#3 May\n\n" <<
 				"	Your choice? ";
-
-			// TO DO: add month
 			break;
 		case custom_departure_day:
 			std::cout << "	Pick the day to leave.\n\n";
-			std::cout << "		1-31\n" <<
+			std::cout << "		1-" << months[start_date.month] << "\n\n" <<
 				"	Your choice? ";
-			custom_departure_pick_ = done_custom_departure;
-			// TO DO: add this to road class
 			break;
 		case done_custom_departure:
-			// TO DO: read the date from road
+			std::cout << "\n	You start on " << months_names[start_date.month] << " " << start_date.day << " 1847!";
 			break;
 		default: ;
 		}
+		break;
 	case done_departure:
-		std::cout << "\n	You start on March 01 1847!";
+		std::cout << "\n	You start on " << months_names[start_date.month] << " " << start_date.day << " 1847!";
 		break;
 	default: ;
 	}

@@ -3,12 +3,14 @@
 
 #include "memory"
 #include "party.hpp"
+#include "road.h"
 
 
 struct game_data
 {
 	std::shared_ptr<state_machine> machine = std::make_shared<state_machine>(state_machine());
 	std::shared_ptr<party> player_party = std::make_shared<party>(party());
+	std::shared_ptr<road> journey_road = std::make_shared<road>(road());
 
 	game_data() = default;
 
