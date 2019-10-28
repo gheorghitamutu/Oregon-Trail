@@ -6,11 +6,11 @@ store::store()
 {
 	supplies_costs_ =
 	{
-		{wagon, 200},
-		{oxen, 40},
-		{food, 200},
-		{ammunition, 200},
-		{miscellaneous_supplies, 200},
+		{supplies::wagon, 200},
+		{supplies::oxen, 40},
+		{supplies::food, 200},
+		{supplies::ammunition, 200},
+		{supplies::miscellaneous_supplies, 200},
 	};
 }
 

@@ -96,7 +96,7 @@ void departure_state::handle_input()
 			break;
 		case done_custom_departure:
 			{
-				const auto wagon_cost = data_->universal_store->get_supply_cost(wagon);
+				const auto wagon_cost = data_->universal_store->get_supply_cost(supplies::wagon);
 				data_->player_party->buy(wagon_cost);
 			}
 			data_->machine->add_state(std::make_shared<store_description_state>(store_description_state(data_)), true);
@@ -106,7 +106,7 @@ void departure_state::handle_input()
 		break;
 	case done_departure: 
 		{
-			const auto wagon_cost = data_->universal_store->get_supply_cost(wagon);
+			const auto wagon_cost = data_->universal_store->get_supply_cost(supplies::wagon);
 			data_->player_party->buy(wagon_cost);
 		}
 		data_->machine->add_state(std::make_shared<store_description_state>(store_description_state(data_)), true);

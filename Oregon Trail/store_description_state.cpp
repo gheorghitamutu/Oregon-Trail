@@ -34,7 +34,7 @@ void store_description_state::draw()
 
 	std::cout << "\n\n\n\n\n\n						OREGON TRAIL\n\n\n\n";
 
-	const auto wagon_cost = data_->universal_store->get_supply_cost(wagon);
+	const auto wagon_cost = data_->universal_store->get_supply_cost(supplies::wagon);
 	std::cout << "		YOU HAD SAVED " << (data_->player_party->get_players()[0].get_money() + wagon_cost) << 
 		" TO SPEND FOR THE TRIP, AND YOU'VE JUST PAID $" << wagon_cost << " FOR A WAGON.\n" <<
 		"		YOU WILL NEED TO SPEND THE REST OF YOUR MONEY ON THE FOLLOWING ITEMS :\n\n" <<

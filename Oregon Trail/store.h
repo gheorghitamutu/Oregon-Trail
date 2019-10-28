@@ -2,7 +2,7 @@
 #include <map>
 
 
-enum supplies
+enum class supplies
 {
 	wagon,
 	oxen,
