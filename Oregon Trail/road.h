@@ -1,7 +1,9 @@
 #pragma once
-#include <map>
 
-enum journey_months
+#include <map>
+#include <string>
+
+enum class journey_months
 {
 	march,
 	april,
@@ -16,33 +18,33 @@ enum journey_months
 
 static std::map<journey_months, int> months = 
 {
-	{march, 31},
-	{april, 30},
-	{may, 31},
-	{june, 30},
-	{july, 30},
-	{august, 31},
-	{september, 30},
-	{october, 31},
-	{november, 30}
+	{journey_months::march, 31},
+	{journey_months::april, 30},
+	{journey_months::may, 31},
+	{journey_months::june, 30},
+	{journey_months::july, 30},
+	{journey_months::august, 31},
+	{journey_months::september, 30},
+	{journey_months::october, 31},
+	{journey_months::november, 30}
 };
 
 static std::map<journey_months, std::string> months_names =
 {
-	{march, "March"},
-	{april, "April"},
-	{may, "May"},
-	{june, "June"},
-	{july, "July"},
-	{august, "August"},
-	{september, "September"},
-	{october, "October"},
-	{november, "November"}
+	{journey_months::march, "March"},
+	{journey_months::april, "April"},
+	{journey_months::may, "May"},
+	{journey_months::june, "June"},
+	{journey_months::july, "July"},
+	{journey_months::august, "August"},
+	{journey_months::september, "September"},
+	{journey_months::october, "October"},
+	{journey_months::november, "November"}
 };
 
 struct journey_date
 {
-	journey_months month = march;
+	journey_months month = journey_months::march;
 	int day = 1;
 };
 

@@ -1,21 +1,14 @@
+#include <chrono>
+#include <iostream>
+#include <ostream>
+#include <string>
+#include <thread>
+
 #include "main_menu_state.hpp"
 #include "helper.hpp"
-
 #include "game_description_state.hpp"
-
 #include "end_state.hpp"
-
-#include <chrono>
-
-#include <iostream>
-
-#include <ostream>
-
-#include <string>
-
 #include "ranking_state.hpp"
-
-#include <thread>
 #include "social_status_menu.h"
 
 
@@ -42,23 +35,23 @@ void main_menu_state::handle_input()
 
 	switch (choice_value)
 	{
-	case travel:
+	case main_menu_options::travel:
 		std::cout << "\n\n	Your choice is to travel!";
 		data_->machine->add_state(std::make_shared<social_status_menu>(social_status_menu(data_)), false);
 		break;
-	case learn:
+	case main_menu_options::learn:
 		std::cout << "\n\n	Your choice is to learn!";
 		data_->machine->add_state(std::make_shared<game_description_state>(game_description_state(data_)), false);
 		break;
-	case check:
+	case main_menu_options::check:
 		std::cout << "\n\n	Your choice is to check!";
 		data_->machine->add_state(std::make_shared<ranking_state>(ranking_state(data_)), false);
 		break;
-	case end:
+	case main_menu_options::end:
 		std::cout << "\n\n	Your choice is to end!";
 		data_->machine->add_state(std::make_shared<end_state>(end_state(data_)), false);
 		break;
-	case offset:
+	case main_menu_options::offset:
 	default: 
 		std::cout << "\n\n	Your choice is invalid!";
 	}	

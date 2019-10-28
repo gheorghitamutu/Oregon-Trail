@@ -70,15 +70,15 @@ void departure_state::handle_input()
 			{
 				if (value == 1)
 				{
-					data_->journey_road->set_start_date_month(march);
+					data_->journey_road->set_start_date_month(journey_months::march);
 				}
 				else if (value == 2)
 				{
-					data_->journey_road->set_start_date_month(april);
+					data_->journey_road->set_start_date_month(journey_months::april);
 				}
 				else if (value == 3)
 				{
-					data_->journey_road->set_start_date_month(may);
+					data_->journey_road->set_start_date_month(journey_months::may);
 				}
 				custom_departure_pick_ = custom_departure_day;
 			}

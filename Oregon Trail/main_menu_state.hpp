@@ -3,7 +3,7 @@
 
 #include "state_machine.hpp"
 
-enum main_menu_options : int
+enum class main_menu_options : int
 {
 	offset,
 	travel,

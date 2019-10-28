@@ -21,7 +21,7 @@ void store_description_state::handle_input()
 
 	std::getline(std::cin, choice);
 
-	// TO DO: add store state
+	// TODO: add store state
 }
 
 void store_description_state::update()
@@ -38,7 +38,7 @@ void store_description_state::draw()
 	std::cout << "		YOU HAD SAVED " << (data_->player_party->get_players()[0].get_money() + wagon_cost) << 
 		" TO SPEND FOR THE TRIP, AND YOU'VE JUST PAID $" << wagon_cost << " FOR A WAGON.\n" <<
 		"		YOU WILL NEED TO SPEND THE REST OF YOUR MONEY ON THE FOLLOWING ITEMS :\n\n" <<
-		"			-OXEN. YOU CAN SPEND $100 - $200 ON YOUR TEAM.\n" << 
+		"			- OXEN. YOU CAN SPEND $100 - $200 ON YOUR TEAM.\n" << 
 		"			 THE MORE YOU SPEND, THE FASTER YOU'LL GO BECAUSE YOU'LL HAVE BETTER ANIMALS\n" <<
 		"			- FOOD - THE MORE YOU HAVE, THE LESS CHANCE THERE IS OF GETTING SICK\n" <<
 		"			- AMMUNITION - YOU WILL NEED BULLETS FOR ATTACKS BY ANIMALS AND BANDITS, AND FOR HUNTING FOOD\n" <<
