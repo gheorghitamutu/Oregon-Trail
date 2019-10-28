@@ -1,7 +1,7 @@
 #pragma once
 #include "game_description_state.hpp"
 
-enum departure_options : int
+enum class departure_options : int
 {
 	offset_departure,
 	default_departure_date,
@@ -9,12 +9,12 @@ enum departure_options : int
 	done_departure
 };
 
-enum custom_departure_options : int
+enum class custom_departure_options : int
 {
-	offset_custom_departure,
-	custom_departure_month,
-	custom_departure_day,
-	done_custom_departure
+	offset_departure,
+	departure_month,
+	departure_day,
+	done_departure
 };
 
 class departure_state : public state

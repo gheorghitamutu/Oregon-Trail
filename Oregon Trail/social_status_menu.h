@@ -4,7 +4,7 @@
 #include <memory>
 
 
-enum social_status_menu_options : int
+enum class social_status_menu_options : int
 {
 	offset_status,
 	banker,

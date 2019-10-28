@@ -2,7 +2,7 @@
 #include "game_description_state.hpp"
 #include <vector>
 
-enum pick_state : int
+enum class pick_state : int
 {
 	offset_pick,
 	main,

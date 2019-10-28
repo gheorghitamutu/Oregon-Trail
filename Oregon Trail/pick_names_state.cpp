@@ -8,7 +8,7 @@
 
 pick_names_state::pick_names_state(std::shared_ptr<game_data> data) : data_(std::move(data))
 {
-	pick_ = main;
+	pick_ = pick_state::main;
 }
 
 
@@ -24,57 +24,57 @@ void pick_names_state::handle_input()
 {
 	std::string name;
 
-	if (pick_ != done)
+	if (pick_ != pick_state::done)
 	{
 		std::getline(std::cin, name);
 	}
 
 	switch (pick_)
 	{
-	case offset_pick:
-		pick_ = main;
+	case pick_state::offset_pick:
+		pick_ = pick_state::main;
 		break;
-	case main:
+	case pick_state::main:
 		if (name.empty())
 		{
 			name = "Noah";
 		}
 		data_->player_party->set_player_name(0, name);
-		pick_ = second;
+		pick_ = pick_state::second;
 		break;
-	case second:
+	case pick_state::second:
 		if (name.empty())
 		{
 			name = "Alan";
 		}
 		data_->player_party->set_player_name(1, name);
-		pick_ = third;
+		pick_ = pick_state::third;
 		break;
-	case third:
+	case pick_state::third:
 		if (name.empty())
 		{
 			name = "Joan";
 		}
 		data_->player_party->set_player_name(2, name);
-		pick_ = fourth;
+		pick_ = pick_state::fourth;
 		break;
-	case fourth:
+	case pick_state::fourth:
 		if (name.empty())
 		{
 			name = "Elise";
 		}
 		data_->player_party->set_player_name(3, name);
-		pick_ = fifth;
+		pick_ = pick_state::fifth;
 		break;
-	case fifth:
+	case pick_state::fifth:
 		if (name.empty())
 		{
 			name = "Katie";
 		}
 		data_->player_party->set_player_name(4, name);
-		pick_ = done;
+		pick_ = pick_state::done;
 		break;
-	case done:
+	case pick_state::done:
 		data_->machine->add_state(std::make_shared<departure_state>(departure_state(data_)), true);
 		break;
 	default: ;
@@ -95,17 +95,17 @@ void pick_names_state::draw()
 
 	switch (pick_)
 	{
-	case offset_pick:
+	case pick_state::offset_pick:
 		break;
-	case main:
+	case pick_state::main:
 		std::cout << "	What is the first name of the wagon leader?\n\n";
 		std::cout << "		#1 ";
 		break;
-	case second:
-	case third:
-	case fourth:
-	case fifth:
-	case done:
+	case pick_state::second:
+	case pick_state::third:
+	case pick_state::fourth:
+	case pick_state::fifth:
+	case pick_state::done:
 		std::cout << "	What are the names of the four other members in your party?\n\n";
 		{
 			auto index_names = 0;

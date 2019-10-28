@@ -49,6 +49,8 @@ void store_description_state::draw()
 		"		HOWEVER, ITEMS COST MORE AT THE FORTS. YOU CAN ALSO GO HUNTING ALONG THE WAY TO GET MORE FOOD.\n\n" <<
 		"		PRESS ENTER TO CONTINUE...";
 
+	// TODO: remove this message when the store gets implemented
+	std::cout << std::endl << std::endl << "Store not yet implemented!" << std::endl;
 }
 
 void store_description_state::resume()

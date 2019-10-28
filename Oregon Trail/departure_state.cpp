@@ -9,8 +9,8 @@
 
 departure_state::departure_state(std::shared_ptr<game_data> data) : data_(std::move(data))
 {
-	departure_pick_ = default_departure_date;
-	custom_departure_pick_ = custom_departure_month;
+	departure_pick_ = departure_options::default_departure_date;
+	custom_departure_pick_ = custom_departure_options::departure_month;
 }
 
 
@@ -26,7 +26,7 @@ void departure_state::handle_input()
 {
 	std::string choice;
 
-	if (departure_pick_ != done_departure)
+	if (departure_pick_ != departure_options::done_departure)
 	{
 		std::getline(std::cin, choice);
 	}
@@ -35,10 +35,10 @@ void departure_state::handle_input()
 
 	switch (departure_pick_)
 	{
-	case offset_departure:
-		departure_pick_ = default_departure_date;
+	case departure_options::offset_departure:
+		departure_pick_ = departure_options::default_departure_date;
 		break;
-	case default_departure_date:
+	case departure_options::default_departure_date:
 		if (value != 1 && value != 2)
 		{
 			std::cout << "\n	Invalid choice!";
@@ -47,21 +47,21 @@ void departure_state::handle_input()
 		{
 			if (value == 1)
 			{
-				departure_pick_ = done_departure;
+				departure_pick_ = departure_options::done_departure;
 			}
 			else
 			{
-				departure_pick_ = custom_departure_date;
+				departure_pick_ = departure_options::custom_departure_date;
 			}
 		}
 		break;
-	case custom_departure_date:
+	case departure_options::custom_departure_date:
 		switch (custom_departure_pick_)
 		{
-		case offset_custom_departure:
-			custom_departure_pick_ = custom_departure_month;
+		case custom_departure_options::offset_departure:
+			custom_departure_pick_ = custom_departure_options::departure_month;
 			break;
-		case custom_departure_month:
+		case custom_departure_options::departure_month:
 			if (value != 1 && value != 2 && value != 3)
 			{
 				std::cout << "\n	Invalid choice!";
@@ -80,10 +80,10 @@ void departure_state::handle_input()
 				{
 					data_->journey_road->set_start_date_month(journey_months::may);
 				}
-				custom_departure_pick_ = custom_departure_day;
+				custom_departure_pick_ = custom_departure_options::departure_day;
 			}
 			break;
-		case custom_departure_day:
+		case custom_departure_options::departure_day:
 			if (value < 1 || value > months[data_->journey_road->get_start_date().month])
 			{
 				std::cout << "\n	Invalid choice!";
@@ -91,10 +91,10 @@ void departure_state::handle_input()
 			else
 			{
 				data_->journey_road->set_start_date_day(value);
-				custom_departure_pick_ = done_custom_departure;
+				custom_departure_pick_ = custom_departure_options::done_departure;
 			}
 			break;
-		case done_custom_departure:
+		case custom_departure_options::done_departure:
 			{
 				const auto wagon_cost = data_->universal_store->get_supply_cost(supplies::wagon);
 				data_->player_party->buy(wagon_cost);
@@ -104,7 +104,7 @@ void departure_state::handle_input()
 		default: ;
 		}
 		break;
-	case done_departure: 
+	case departure_options::done_departure:
 		{
 			const auto wagon_cost = data_->universal_store->get_supply_cost(supplies::wagon);
 			data_->player_party->buy(wagon_cost);
@@ -132,39 +132,39 @@ void departure_state::draw()
 
 	switch (departure_pick_)
 	{
-	case offset_departure:
+	case departure_options::offset_departure:
 		break;
-	case default_departure_date:
+	case departure_options::default_departure_date:
 		std::cout << "	It is 1847. Your jumping off place for Oregon is Independence, Missouri.\n\n" <<
 			"		#1 Do you want to start on March 01 1847?\n" <<
 			"		#2 Do you want to pick a date between March 01 1847 and May 01 1847?\n\n" <<
 			"	Your choice? ";
 		break;
-	case custom_departure_date:
+	case departure_options::custom_departure_date:
 		switch (custom_departure_pick_)
 		{
-		case offset_custom_departure:
-			custom_departure_pick_ = custom_departure_month;
+		case custom_departure_options::offset_departure:
+			custom_departure_pick_ = custom_departure_options::departure_month;
 			break;
-		case custom_departure_month:
+		case custom_departure_options::departure_month:
 			std::cout << "	Pick the month to leave.\n\n";
 			std::cout << "		#1 March\n" <<
 				"		#2 April\n" <<
 				"		#3 May\n\n" <<
 				"	Your choice? ";
 			break;
-		case custom_departure_day:
+		case custom_departure_options::departure_day:
 			std::cout << "	Pick the day to leave.\n\n";
 			std::cout << "		1-" << months[start_date.month] << "\n\n" <<
 				"	Your choice? ";
 			break;
-		case done_custom_departure:
+		case custom_departure_options::done_departure:
 			std::cout << "\n	You start on " << months_names[start_date.month] << " " << start_date.day << " 1847!";
 			break;
 		default: ;
 		}
 		break;
-	case done_departure:
+	case departure_options::done_departure:
 		std::cout << "\n	You start on " << months_names[start_date.month] << " " << start_date.day << " 1847!";
 		break;
 	default: ;
